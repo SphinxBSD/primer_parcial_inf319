@@ -1,1 +1,67 @@
+Public Class Form1
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim a, b, c As Integer
+        a = Convert.ToInt32(TextBox1.Text)
+        b = Convert.ToInt32(TextBox2.Text)
+        c = Convert.ToInt32(TextBox3.Text)
+        If a < b And a < c Then GoTo menor_a
+        If b < a And b < c Then GoTo menor_b
+        If c < a And c < b Then GoTo menor_c
+
+menor_a:
+        If b < c Then GoTo imprime_abc Else GoTo imprime_acb
+        GoTo salto
+menor_b:
+        If a < c Then GoTo imprime_bac Else GoTo imprime_bca
+        GoTo salto
+menor_c:
+        If a < b Then GoTo imprime_cab Else GoTo imprime_cba
+        GoTo salto
+
+salto:
+
+imprime_abc:
+        TextBox1.Text = a.ToString()
+        TextBox2.Text = b.ToString()
+        TextBox3.Text = c.ToString()
+        GoTo salir
+
+imprime_acb:
+        TextBox1.Text = a.ToString()
+        TextBox2.Text = c.ToString()
+        TextBox3.Text = b.ToString()
+        GoTo salir
+
+imprime_bac:
+        TextBox1.Text = b.ToString()
+        TextBox2.Text = a.ToString()
+        TextBox3.Text = c.ToString()
+        GoTo salir
+
+imprime_bca:
+        TextBox1.Text = b.ToString()
+        TextBox2.Text = c.ToString()
+        TextBox3.Text = a.ToString()
+        GoTo salir
+
+imprime_cab:
+        TextBox1.Text = c.ToString()
+        TextBox2.Text = a.ToString()
+        TextBox3.Text = b.ToString()
+        GoTo salir
+
+imprime_cba:
+        TextBox1.Text = c.ToString()
+        TextBox2.Text = b.ToString()
+        TextBox3.Text = a.ToString()
+        GoTo salir
+
+salir:
+
+    End Sub
+End Class
