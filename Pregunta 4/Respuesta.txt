@@ -1,0 +1,20 @@
+> corazon <- c("AC","2C","3C","4C","5C","6C","7C","8C","9C","10C","JC","QC","KC")
+> trebol <- c("AT","2T","3T","4T","5T","6T","7T","8T","9T","10T","JT","QT","KT")
+> diamante <- c("AD","2D","3D","4D","5D","6D","7D","8D","9D","10D","JD","QD","KD")
+> espada <- c("AE","2E","3E","4E","5E","6E","7E","8E","9E","10E","JE","QE","KE")
+> baraja <- data.frame(corazon,trebol,espada,diamante)
+> baraja
+   corazon trebol espada diamante
+1       AC     AT     AE       AD
+2       2C     2T     2E       2D
+3       3C     3T     3E       3D
+4       4C     4T     4E       4D
+5       5C     5T     5E       5D
+6       6C     6T     6E       6D
+7       7C     7T     7E       7D
+8       8C     8T     8E       8D
+9       9C     9T     9E       9D
+10     10C    10T    10E      10D
+11      JC     JT     JE       JD
+12      QC     QT     QE       QD
+13      KC     KT     KE       KD
