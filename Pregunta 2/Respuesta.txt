@@ -12,10 +12,14 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+        int valor;
         public Form1()
         {
             InitializeComponent();
+            valor = 0;
         }
+
+
 
         private int sumar(int a, int b)
         {
@@ -40,43 +44,69 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int a, b;
-            float c;
-            a = Convert.ToInt32(textBox1.Text);
-            b = Convert.ToInt32(textBox2.Text);
-            c = sumar(a, b);
-            textBox3.Text = c.ToString();
+            textBox2.Text = textBox1.Text + "+";
+            textBox1.Text = "";
+            valor = 0;
         }
 
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int a, b;
-            float c;
-            a = Convert.ToInt32(textBox1.Text);
-            b = Convert.ToInt32(textBox2.Text);
-            c = multi(a, b);
-            textBox3.Text = c.ToString();
+            textBox2.Text = textBox1.Text + "*";
+            textBox1.Text = "";
+            valor = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int a, b;
-            float c;
-            a = Convert.ToInt32(textBox1.Text);
-            b = Convert.ToInt32(textBox2.Text);
-            c = restar(a, b);
-            textBox3.Text = c.ToString();
+            textBox2.Text = textBox1.Text + "-";
+            textBox1.Text = "";
+            valor = 0;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int a, b;
-            float c;
-            a = Convert.ToInt32(textBox1.Text);
-            b = Convert.ToInt32(textBox2.Text);
-            c = divi(a, b);
-            textBox3.Text = c.ToString();
+            textBox2.Text = textBox1.Text + "/";
+            textBox1.Text = "";
+            valor = 0;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            valor = valor * 10 + Convert.ToInt32(((Button)sender).Text);
+            textBox1.Text = valor.ToString();
+        }
+
+        private void button15_Click_1(object sender, EventArgs e)
+        {
+            int a = Convert.ToInt32(textBox1.Text);
+            String x = textBox2.Text;
+            int lon = x.Length;
+            String y = x.Substring(0, lon - 1);
+            char car = x[lon - 1];
+            textBox2.Text = textBox2.Text + textBox1.Text;
+            int b = Convert.ToInt32(y);
+            if (car == '+')
+            {
+                float c = sumar(b, a);
+                textBox3.Text = c.ToString();
+            }
+            if (car == '-')
+            {
+                float c = restar(b, a);
+                textBox3.Text = c.ToString();
+            }
+            if (car == '*')
+            {
+                float c = multi(b, a);
+                textBox3.Text = c.ToString();
+            }
+            if (car == '/')
+            {
+                float c = divi(b, a);
+                textBox3.Text = c.ToString();
+            }
+        }
+
     }
 }
